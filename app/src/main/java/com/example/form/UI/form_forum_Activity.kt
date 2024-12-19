@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.form.R
+import com.example.form.dao.forumDao
 import com.example.form.models.forum
 import java.math.BigDecimal
 
@@ -31,14 +32,19 @@ class form_forum_Activity :
                 BigDecimal(viewsform.text.toString())
             }
 
-            val exemploforum = forum(
+            val newForum = forum(
                 titulo = titulo,
                 descricao = descricao,
                 views = views
             )
 
-            Log.i("form_forum_Activity", "onCreate: $exemploforum")
+            val dao = forumDao()
+            dao.cadastrar(newForum)
 
+            Log.i("Forum", "onCreate: $newForum")
+            Log.i("Forum", "onCreate: ${dao.listar()}")
+
+            finish()
         }
 
     }

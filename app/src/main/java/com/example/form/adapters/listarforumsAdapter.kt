@@ -1,6 +1,7 @@
 package com.example.form.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,8 +13,11 @@ import com.example.form.models.forum
 
 class listarforumsAdapter(
     private val context: Context,
-    private val forms: List<forum>
+    forms: List<forum>
 ): RecyclerView.Adapter<listarforumsAdapter.Holder>() {
+
+    private val forms = forms.toMutableList()
+
     class Holder(view: View):RecyclerView.ViewHolder(view){
 
         fun vincular(forums: forum){
@@ -45,5 +49,14 @@ class listarforumsAdapter(
         position: Int) {
         val Forum = forms[position]
         holder.vincular(Forum)
+    }
+
+    fun atualizar(forums: List<forum>) {
+        this.forms.clear()
+        this.forms.addAll(forums)
+        notifyDataSetChanged()
+        Log.i("forum", "atualizar: $forums")
+
+
     }
 }
