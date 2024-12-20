@@ -16,7 +16,7 @@ class listarforumsAdapter(
     forms: List<forum>
 ): RecyclerView.Adapter<listarforumsAdapter.Holder>() {
 
-    private val forms = forms.toMutableList()
+    private val forums = forms.toMutableList()
 
     class Holder(view: View):RecyclerView.ViewHolder(view){
 
@@ -38,25 +38,22 @@ class listarforumsAdapter(
 
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.forum_item, parent, false)
-
         return Holder(view)
     }
 
-    override fun getItemCount(): Int = forms.size
+    override fun getItemCount(): Int = forums.size
 
     override fun onBindViewHolder(
         holder: Holder,
         position: Int) {
-        val Forum = forms[position]
+        val Forum = forums[position]
         holder.vincular(Forum)
     }
 
     fun atualizar(forums: List<forum>) {
-        this.forms.clear()
-        this.forms.addAll(forums)
+        this.forums.clear()
+        this.forums.addAll(forums)
         notifyDataSetChanged()
-        Log.i("forum", "atualizar: $forums")
-
 
     }
 }
