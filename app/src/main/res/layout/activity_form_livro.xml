@@ -11,7 +11,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".UI.form_forum_Activity">
+    tools:context=".UI.form_Livro_Activity">
 
     <EditText
         android:id="@+id/tituloform"
@@ -20,7 +20,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="16dp"
         android:inputType="text"
-        android:hint="Titulo do forum"
+        android:hint="Titulo do livro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -30,20 +30,9 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:inputType="text"
-        android:hint="Descrição do forum"
+        android:hint="Descrição do livro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tituloform"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
-
-        android:id="@+id/viewsform"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:inputType="numberDecimal"
-        android:hint="Numero de views (Vou trocar isso)"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/descricaoform"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
@@ -56,7 +45,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewsform" />
+        app:layout_constraintTop_toBottomOf="@+id/tituloform" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

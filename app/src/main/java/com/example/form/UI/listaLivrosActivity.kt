@@ -2,21 +2,21 @@ package com.example.form.UI
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
 import com.example.form.R
-import com.example.form.adapters.listarforumsAdapter
-import com.example.form.dao.forumDao
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.form.adapters.listarLivrosAdapter
+import com.example.form.dao.livroDao
+import com.example.form.databinding.ActivityListaLivrosBinding
 
-class listaForumsActivity:
-    AppCompatActivity(R.layout.activity_lista_forums) {
-        private val dao = forumDao()
-        private val adapter = listarforumsAdapter(context = this, forms = dao.listar())
+class listaLivrosActivity:
+    AppCompatActivity(R.layout.activity_lista_livros) {
+        private val dao = livroDao()
+        private val adapter = listarLivrosAdapter(context = this, livros = dao.listar())
+        private val binding by lazy { ActivityListaLivrosBinding.inflate(layoutInflater)}
 
         override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+            setContentView(binding.root)
             configRecyclerView()
             configFAB()
         }
@@ -27,19 +27,19 @@ class listaForumsActivity:
         }
 
     private fun configFAB() {
-        val FAB = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+        val FAB = binding.floatingActionButton
         FAB.setOnClickListener {
             abrirFormulario()
         }
     }
 
     private fun abrirFormulario() {
-        val intent = Intent(this, form_forum_Activity::class.java)
+        val intent = Intent(this, form_Livro_Activity::class.java)
         startActivity(intent)
     }
 
     private fun configRecyclerView(){
-        val recyclerView = findViewById<RecyclerView>(R.id.RecyclerView)
+        val recyclerView = binding.RecyclerView
         recyclerView.adapter = adapter
     }
 }

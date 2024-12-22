@@ -1,9 +1,9 @@
 package com.example.form.models
 
-import java.math.BigDecimal
+import java.util.Date
 
-data class forum (
+data class livro (
     val titulo: String,
     val descricao: String,
-    val views: BigDecimal
+    val dataPublicacao: Date = Date()
 )
