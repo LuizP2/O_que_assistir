@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.form.R
@@ -22,12 +23,14 @@ class listarLivrosAdapter(
             val titulo = itemView.findViewById<TextView>(R.id.titulo)
             val descricao = itemView.findViewById<TextView>(R.id.descricao)
             val dataPublicacao = itemView.findViewById<TextView>(R.id.data)
+            val imagem = itemView.findViewById<ImageView>(R.id.imagem)
 
             val dataFormatada = formatardata(livros)
 
             titulo.text = livros.titulo
             descricao.text = livros.descricao
             dataPublicacao.text = dataFormatada
+            imagem.setImageURI(livros.imagem)
 
         }
 

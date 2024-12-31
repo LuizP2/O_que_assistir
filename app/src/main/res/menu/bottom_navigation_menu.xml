@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/livros"
+        android:id="@+id/livros"
+        android:icon="@drawable/book_menu_icon"
+        />
+    <item
+        android:title="@string/filmes"
+        android:id="@+id/filmes"
+        android:icon="@drawable/filme_menu_icon"
+        />
+    <item
+        android:title="@string/series"
+        android:id="@+id/series"
+        android:icon="@drawable/serie_menu_icon"
+        />
+</menu>

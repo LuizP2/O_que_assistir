@@ -2,11 +2,13 @@ package com.example.form.UI
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.form.R
 import com.example.form.adapters.listarLivrosAdapter
 import com.example.form.dao.livroDao
 import com.example.form.databinding.ActivityListaLivrosBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class listaLivrosActivity:
     AppCompatActivity(R.layout.activity_lista_livros) {
@@ -19,9 +21,12 @@ class listaLivrosActivity:
             setContentView(binding.root)
             configRecyclerView()
             configFAB()
+            configBottomNavigation()
+
         }
 
-        override fun onResume() {
+
+    override fun onResume() {
             super.onResume()
             adapter.atualizar(dao.listar())
         }
@@ -42,4 +47,8 @@ class listaLivrosActivity:
         val recyclerView = binding.RecyclerView
         recyclerView.adapter = adapter
     }
-}
+
+    private fun configBottomNavigation() {
+        val navBar = binding.navBar
+        }
+    }

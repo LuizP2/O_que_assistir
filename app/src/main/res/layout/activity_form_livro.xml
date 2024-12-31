@@ -13,39 +13,80 @@
     android:layout_height="wrap_content"
     tools:context=".UI.form_Livro_Activity">
 
-    <EditText
-        android:id="@+id/tituloform"
-        android:layout_width="0dp"
+    <ImageView
+        android:id="@+id/imagem_Livro"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginHorizontal="16dp"
-        android:inputType="text"
-        android:hint="Titulo do livro"
-        app:layout_constraintStart_toStartOf="parent"
+        android:maxWidth="170dp"
+        android:maxHeight="350dp"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <EditText
-        android:id="@+id/descricaoform"
+        app:layout_constraintBottom_toTopOf="@id/tituloform_Layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tituloform_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/imagem_Livro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tituloform"
+            android:hint="titulo do livro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descricaoform_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
         android:inputType="text"
-        android:hint="Descrição do livro"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tituloform"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/tituloform_Layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/descricaoform"
+            android:hint="O que te faz recomendar este livro?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/image_button"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/new_archive_icon"
+        app:layout_constraintTop_toBottomOf="@id/descricaoform_layout"
+        android:text="Carregar imagem do livro"
+        />
 
     <Button
         android:id="@+id/submit_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="120dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintVertical_bias="1"
-        android:text="Submit"
+        android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloform" />
+        app:layout_constraintTop_toBottomOf="@+id/descricaoform_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
