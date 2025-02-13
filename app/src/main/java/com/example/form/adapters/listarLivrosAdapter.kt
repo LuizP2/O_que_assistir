@@ -19,7 +19,7 @@ class listarLivrosAdapter(
 
     class Holder(view: View):RecyclerView.ViewHolder(view){
 
-        fun vincular(livros: livro){
+        fun vincular(livros: livro) {
             val titulo = itemView.findViewById<TextView>(R.id.titulo)
             val descricao = itemView.findViewById<TextView>(R.id.descricao)
             val dataPublicacao = itemView.findViewById<TextView>(R.id.data)
@@ -32,6 +32,13 @@ class listarLivrosAdapter(
             dataPublicacao.text = dataFormatada
             imagem.setImageURI(livros.imagem)
 
+            val visibilidade = if (livros.imagem != null) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+
+            imagem.visibility = visibilidade
         }
 
         private fun formatardata(livros: livro): String {
